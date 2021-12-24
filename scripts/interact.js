@@ -110,7 +110,7 @@ function toggleBookRead(e) {
   const bookIndex = node.id.split('_')[1]
   const read = !library[bookIndex].read
 
-  library[bookIndex].read = read
+  library[bookIndex].toggleRead()
 
   document.querySelector(`#${node.id} .toggle-read`).classList.toggle('true')
   document.querySelector(`#${node.id} .rd-status`).textContent = read
