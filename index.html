@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="dorian edwards" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./scripts/DOM.js" defer></script>
+    <script src="./scripts/library.js" defer></script>
+    <script src="./scripts/interact.js" defer></script>
+    <title>Libary</title>
+  </head>
+  <body>
+    <header>
+      <h1>Library</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="library">
+          <div class="add-book book add-btn">
+            <button>
+              <span
+                ><img
+                  src="./assets/addBlack.png"
+                  alt="add icon"
+                  class="add-book"
+              /></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="overlay-wrapper hidden">
+        <div class="form-overlay"></div>
+        <div class="delete-wrapper hidden">
+          <div id="delete-confirmation">
+            <p>Delete <span id="selection-title"></span>?</p>
+            <div class="del-choices">
+              <button id="del-yes" class="btn-del" type="button">Yes</button>
+              <button id="del-cancel" class="btn-del" type="button">No</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-wrapper hidden">
+          <form id="new-book">
+            <h3>Add Book</h3>
+            <div class="form-input">
+              <label for="title">Title</label>
+              <input type="text" id="title" required />
+            </div>
+            <div class="form-input">
+              <label for="author">Author</label>
+              <input type="text" id="author" required />
+            </div>
+            <div class="form-input">
+              <label for="pages">Pages</label>
+              <input type="text" id="pages" required />
+            </div>
+            <div class="form-input radio-choice">
+              <p>Completed?</p>
+              <div class="choices">
+                <div>
+                  <label for="yes">Yes</label>
+                  <input type="radio" name="complete" id="1" required />
+                </div>
+                <div>
+                  <label for="no">No</label>
+                  <input type="radio" name="complete" id="0" required />
+                </div>
+              </div>
+            </div>
+            <div id="form-submit">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
