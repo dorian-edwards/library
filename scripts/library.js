@@ -106,24 +106,3 @@ Book.prototype.removeFromLibrary = function () {
 
   reLabel()
 }
-
-const lotr1 = new Book(
-  'Lord of the Rings: Fellowship of the Ring',
-  'J.R.R Tolkien',
-  325,
-  true
-)
-
-const lotr2 = new Book(
-  'Lord of the Rings: The Two Towers',
-  'J.R.R Tolkien',
-  362,
-  true
-)
-
-const lotr3 = new Book(
-  'Lord of the Rings: Return of the King',
-  'J.R.R Tolkien',
-  378,
-  true
-)
