@@ -1,3 +1,14 @@
+const hasLocalStorage = window.localStorage.length !== 0
+
+if (hasLocalStorage) {
+  const arr = JSON.parse(window.localStorage.getItem('library'))
+  arr.forEach(({ title, author, pages, read }) => {
+    const book = new Book(title, author, pages, read)
+    book.addToLibrary()
+  })
+  displayLibrary()
+}
+
 document.querySelector('body').addEventListener('click', (e) => {
   const { classList } = e.target
 
@@ -63,6 +74,7 @@ function submit(e) {
   newUserBook.addToLibrary()
   clearForm()
   toggleAdd()
+  updateLocally()
   displayLibrary()
 }
 
@@ -93,6 +105,7 @@ function deleteBook(e) {
     selected.classList.toggle('active')
     selected = null
     displayLibrary()
+    updateLocally()
   } else {
     selected.classList.toggle('active')
     selected = null
@@ -111,9 +124,17 @@ function toggleBookRead(e) {
   const read = !library[bookIndex].read
 
   library[bookIndex].toggleRead()
+  updateLocally()
 
   document.querySelector(`#${node.id} .toggle-read`).classList.toggle('true')
   document.querySelector(`#${node.id} .rd-status`).textContent = read
     ? 'Read'
     : 'Not Read'
+}
+
+function updateLocally() {
+  const localStorageString = JSON.stringify(library)
+  window.localStorage.setItem('library', localStorageString)
+
+  if (library.length === 0) window.localStorage.clear()
 }

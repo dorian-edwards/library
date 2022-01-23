@@ -4,4 +4,4 @@
 
 Either download all of the files into a folder and open index.html in a browser or click [here](https://buddafucofibas.github.io/library/)
 
-Note, as of the most recent version, the storage is entirely temporary. There is no backend and it doesn't use local storage for now.
+Uses local storage to store library info. Deleting every item from your libary in the UI should clear local storage in your browser. This can be verified by typing `localStorage` in the console (accessed from developer tools in browser); it should return `Storage { length: 0 }`. If it doesn't and something is in the local storage, type `localStorage.clear()` to manually clear your browser.

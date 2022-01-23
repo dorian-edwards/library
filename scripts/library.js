@@ -87,14 +87,22 @@ Book.prototype.listed = function () {
 }
 
 Book.prototype.addToLibrary = function () {
+  let added = false
   if (library.length === 0) {
     this.index = 0
     library.push(this)
+    added = true
   } else {
     if (!this.listed()) {
       this.index = library.length
       library.push(this)
+      added = true
     }
+  }
+
+  if (added) {
+    const localStorageLibary = JSON.stringify(library)
+    window.localStorage.setItem('library', localStorageLibary)
   }
 }
 
