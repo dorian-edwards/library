@@ -68,18 +68,6 @@ header h1 {
   position: relative;
   font-weight: 400;
 }
-/* 
-h1:before {
-  content: '';
-  background: var(--secondary-accent);
-  width: 139px;
-  height: 4px;
-  border-radius: 5px;
-  position: absolute;
-  left: 5px;
-  bottom: 7px;
-  z-index: -1;
-} */
 
 main {
   padding-top: 70px;
@@ -149,6 +137,8 @@ body.locked {
 
 .book p {
   margin-bottom: 5px;
+  max-height: 19.5px;
+  overflow: scroll;
 }
 
 .delete button:hover,
